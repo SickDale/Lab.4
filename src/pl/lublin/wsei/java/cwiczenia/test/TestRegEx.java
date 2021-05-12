@@ -23,5 +23,6 @@ public class TestRegEx {
              System.out.println("Znaleziono tytuł: "+m.group(1));
          else
              System.out.println("Nie znaleziono tytułu ... ");
+
     }
 }
