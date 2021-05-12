@@ -53,5 +53,15 @@ public class Infografika {
             adres_grafiki = m.group(1);
         else
             adres_grafiki = "";
+
+
+    }
+    public void print() {
+        System.out.println("Infografika: " +
+                "\nTytuł: " + tytuł +
+                "\nAdres strony : " + adres_strony +
+                "\nAdres grafiki : " + adres_grafiki +
+                "\nAdres miniaturki : " + adres_miniaturki +
+                "\nRozmiary : " + szerokość + "px" + " x " + wysokość + "px");
     }
 }

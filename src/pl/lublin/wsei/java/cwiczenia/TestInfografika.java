@@ -16,12 +16,7 @@ public class TestInfografika {
                         "\t\t\t<description><![CDATA[<div><img src=\"https://stat.gov.pl//gfx/portalinformacyjny/_thumbs/pl/defaultaktualnosci/5866/38/56/1/infografika_koniunktura_gospodarcza_04__2021,k1uUwl-caFOE6tCTiHtf.png\" alt=\"\" width=\"280\" height=\"212\"/></div>]]></description>\n" +
                         "\t\t</item>");
 
-        System.out.println("Infografika: " +
-                "\nTytuł: " + infografika.tytuł +
-                "\nAdres strony : " + infografika.adres_strony +
-                "\nAdres grafiki : " + infografika.adres_grafiki +
-                "\nAdres miniaturki : " + infografika.adres_miniaturki +
-                "\nRozmiary : " + infografika.szerokość + "x" + infografika.wysokość );
+
 
 
     }
