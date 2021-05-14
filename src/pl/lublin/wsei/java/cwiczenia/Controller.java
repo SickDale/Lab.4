@@ -1,5 +1,6 @@
 package pl.lublin.wsei.java.cwiczenia;
 
+import javafx.application.HostServices;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -13,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.File;
 
@@ -22,12 +24,16 @@ public class Controller {
     public Button btnPokazInfografike;
     public Button btnPrzejdzDoStrony;
     public TextField txtAdresStrony;
+    private Infografika selInfografika;
+    private HostServices hostServices;
+
     FileChooser fileChooser = new FileChooser();
     FileChooser.ExtensionFilter xmlFilter = new FileChooser.ExtensionFilter("Pliki XML (*.xml)", "*.xml");
 
     public ListView lstInfografiki;
     ObservableList<String> tytuły = FXCollections.observableArrayList();
     GusInfoGraphicList igList;
+    private Object stage;
 
     @FXML
     public void initialize() {
@@ -38,6 +44,7 @@ public class Controller {
                     public void changed(ObservableValue<? extends Number> observableValue, Number old_val, Number new_val) {
                         int index = new_val.intValue();
                         if (index != -1) {
+                            selInfografika = igList.infografiki.get(index);
                             txtAdresStrony.setText(igList.infografiki.get(index).adres_strony);
                             Image image = new Image(igList.infografiki.get(index).adres_miniaturki);
                             imgMiniaturka.setImage(image);
@@ -61,6 +68,19 @@ public class Controller {
         else {
             lbFile.setText("Proszę wczytać plik ...");
         }
+    }
+
+    public void btnZaladujStrone(ActionEvent actionEvent) {
+        if (selInfografika != null)
+            hostServices.showDocument(selInfografika.adres_strony);
+    }
+
+    public void setStage(Stage primaryStage) {
+        this.stage = stage;
+    }
+
+    public void setHostServices(HostServices hostServices) {
+        this.hostServices = hostServices;
     }
 }
 
