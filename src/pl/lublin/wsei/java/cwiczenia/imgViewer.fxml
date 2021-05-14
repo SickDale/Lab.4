@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lublin.wsei.java.cwiczenia.ImgViewer">
+   <children>
+    <AnchorPane layoutX="181.0" layoutY="71.0" minHeight="0.0" minWidth="0.0" prefHeight="259.0" prefWidth="253.0" />
+      <ScrollPane prefHeight="400.0" prefWidth="600.0">
+         <content>
+            <ImageView fx:id="imgViewer" fitHeight="397.0" fitWidth="597.0" pickOnBounds="true" preserveRatio="true" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
